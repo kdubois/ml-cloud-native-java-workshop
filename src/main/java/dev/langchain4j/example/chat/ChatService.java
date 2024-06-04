@@ -45,7 +45,7 @@ public class ChatService {
         }
 
         try {
-            session.getBasicRemote().sendObject(answer);
+            session.getAsyncRemote().sendObject(answer);
         } catch (Exception e) {
             e.printStackTrace();
         }

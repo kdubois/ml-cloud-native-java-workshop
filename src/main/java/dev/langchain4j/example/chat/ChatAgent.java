@@ -9,6 +9,7 @@ import dev.langchain4j.model.huggingface.HuggingFaceChatModel;
 import dev.langchain4j.service.AiServices;
 import dev.langchain4j.service.MemoryId;
 import dev.langchain4j.service.UserMessage;
+import io.quarkiverse.langchain4j.RegisterAiService;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
@@ -39,6 +40,8 @@ public class ChatAgent {
     @ConfigProperty(name = "chat.memory.max.messages")
     private Integer MAX_MESSAGES;
 
+
+    @RegisterAiService
     interface Assistant {
        String chat(@MemoryId String sessionId, @UserMessage String userMessage);
     }
